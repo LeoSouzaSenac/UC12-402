@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.carousel-container {
+    width: 960px; /* 3 cards + 2 gaps */
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px; /* espaço entre os cards */
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    /*
+        flex-grow - O card não pode crescer para ocupar espaço extra.
+        flex-shrink - O card não pode encolher se faltar espaço.
+        flex-basis - Define o tamanho base do card.
+        calc((960px - 40px) / 3):
+            
+            A largura total visível é 960px
+            Temos 2 gaps de 20px entre 3 cards (20 + 20 = 40px)
+        
+            Tiramos os espaços, e dividimos o espaço restante entre 3 cards
+        Cada card terá exatamente esse tamanho
+    
+    */
+    flex: 0 0 calc((960px - 40px) / 3); 
+    /* largura exata considerando 2 gaps (20px + 20px) */
+    
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 20px;
+    font-weight: bold;
+}
